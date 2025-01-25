@@ -28,33 +28,57 @@ namespace MVCCapasCodigo2024.Controllers
             return View();
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create([Bind("Name")] SchoolModel model)
+        {
 
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public IActionResult Create([Bind("Name")] CourseModel model)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
+            if (ModelState.IsValid)
+            {
+
+                SchoolService service = new SchoolService();
+                var dominio = new School
+                {
+
+                    Name = model.Name,
+                    IsActive = true
+                };
+
+                service.Insert(dominio);
+
+                return RedirectToAction(nameof(Index));
+
+            }
+
+            return View(model);
+        }
+
+            //[HttpPost]
+            //[ValidateAntiForgeryToken]
+            //public IActionResult Create([Bind("Name")] CourseModel model)
+            //{
+            //    if (ModelState.IsValid)
+            //    {
 
 
-        //        CourseService service = new CourseService();
-        //        //Modelo a Dominio
-        //        //CourseModel = >Course
+            //        CourseService service = new CourseService();
+            //        //Modelo a Dominio
+            //        //CourseModel = >Course
 
 
-        //        var dominio = new Course
-        //        {
-        //            Name = model.Name,
-        //            IsActive = true,
-        //            CreatedOn = DateTime.Now
-        //        };
+            //        var dominio = new Course
+            //        {
+            //            Name = model.Name,
+            //            IsActive = true,
+            //            CreatedOn = DateTime.Now
+            //        };
 
-        //        service.Insert(dominio);
+            //        service.Insert(dominio);
 
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    return View(model);
-        //}
+            //        return RedirectToAction(nameof(Index));
+            //    }
+            //    return View(model);
+            //}
 
-    }
+        }
 }

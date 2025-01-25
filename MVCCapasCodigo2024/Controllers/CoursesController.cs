@@ -37,7 +37,7 @@ namespace MVCCapasCodigo2024.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create([Bind("Name")] CourseModel model)
+        public IActionResult Create(CourseModel model)
         {
             if (ModelState.IsValid)
             {
