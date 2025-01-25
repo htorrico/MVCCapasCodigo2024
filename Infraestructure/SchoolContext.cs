@@ -12,6 +12,8 @@ namespace Infraestructure
     {
         public DbSet<Course> Courses { get; set; }
 
+        public DbSet<School> Schools { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
