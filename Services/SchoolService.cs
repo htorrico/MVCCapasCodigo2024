@@ -14,7 +14,7 @@ namespace Services
         {
             using (var contex = new SchoolContext())
             {
-                return contex.Schools.ToList();
+                return contex.Schools.Where(x=>x.IsActive==true).ToList();
             }
         }
 
