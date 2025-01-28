@@ -31,6 +31,36 @@
     <label>Resultado Suma: </label>
     <input type="text" id="resultado" value="" />
 
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <label>Nombres: </label>
+    <input type="text" id="nombres" class="clase1" value="" />
+    <br />
+    <label>Apellidos: </label>
+    <input type="text" id="apellidos" class="clase1" value="" />
+    <br />
+    <label>Edad: </label>
+    <input type="text" id="edad" class="clase1" value="" />
+    <br />
+    <label>Sexo: </label>
+    <input type="text" id="sexo" class="clase1" value="" />    
+    <br />
+    <label>Direccion: </label>
+    <input type="text" id="direccion" class="clase1" value="" />
+    <br />
+    <label>Ciudad: </label>
+    <input type="text" id="ciudad" class="clase1" value="" />
+    <br />
+    <button id="limpiar">Limpiar</button>
+    <br />
+    <button id="limpiar2">Limpiar Todos</button>
+
+
+
+
 </body>
 </html>
 <script type="text/javascript">
@@ -59,7 +89,19 @@
             var valor2 = eval($('#valor2').val());
             var suma = valor1 + valor2;
             $('#resultado').val(suma);
+        });
+        //Selector por id #
+        $('#limpiar').click(function () {
+            $('#nombres').val('');
+            $('#apellidos').val('');
+            $('#edad').val('');
+            $('#sexo').val('');
+            $('#direccion').val('');
+        });
 
+        //Selector por clase .
+        $('#limpiar2').click(function () {
+            $('.clase1').val('');            
         });
 
 
