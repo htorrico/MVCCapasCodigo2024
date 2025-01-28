@@ -15,17 +15,54 @@
     <p id="miTexto">Texto inicial</p>
     <input type="text" id="miInput" value="Valor inicial" />
     <a href="https://www.google.com" id="miEnlace">Ir a Google</a>
+    <br />
+    <button id="mostrar">Mostrar Mensaje</button>
+    <button id="cambiar">Cambiar Textos</button>
+
+    <br />
+    <label> Valor1:</label>
+    <input type="text" id="valor1" value="" />
+    <br />
+    <label>Valor2: </label>
+    <input type="text" id="valor2" value="" />
+    <br />
+    <button id="sumar">Sumar</button>
+    <br />
+    <label>Resultado Suma: </label>
+    <input type="text" id="resultado" value="" />
 
 </body>
 </html>
 <script type="text/javascript">
     $(document).ready(function () {
+
+        //EJEMPLO 01
+
+
         // Cambiar el texto del párrafo
         $('#miTexto').text('Nuevo texto con JQUERY');
         // Cambiar el valor del input
         $('#miInput').val('Nuevo valor con JQUERY');
         // Cambiar el atributo href del enlace
         $('#miEnlace').attr('href', 'https://www.bing.com');
+
+        $('#mostrar').click(function () {
+            alert('Hugo Torrico');
+        });
+
+        $('#cambiar').click(function () {
+            $('#miInput').val('TEXTO CAMBIADO POR BOTÓN');
+        });
+
+        $('#sumar').click(function () {
+            var valor1 = eval($('#valor1').val());
+            var valor2 = eval($('#valor2').val());
+            var suma = valor1 + valor2;
+            $('#resultado').val(suma);
+
+        });
+
+
         
     });
 </script>
