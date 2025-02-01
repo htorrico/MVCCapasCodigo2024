@@ -38,5 +38,10 @@ namespace MVCCapasCodigo2024.Controllers
         {
             return View();
         }
+
+        public IActionResult Validaciones2()
+        {
+            return View();
+        }
     }
 }

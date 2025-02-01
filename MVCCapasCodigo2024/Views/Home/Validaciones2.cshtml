@@ -1,0 +1,40 @@
+﻿﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validación de Formulario con jQuery Validate</title>
+    <style>
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <h2>Formulario de Contacto</h2>
+    <form id="contactForm">
+        <label for="name">Nombres Completos:</label><br>
+        <input type="text" id="name" name="name"><br><br>
+
+        <label for="email">Correo Electrónico:</label><br>
+        <input type="text" id="email" name="email"><br><br>
+
+        <label for="phone">Teléfono:</label><br>
+        <input type="text" id="phone" name="phone"><br><br>
+
+        <input type="submit" value="Enviar">
+    </form> 
+    
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="/js/validaciones2.js"></script>
+    
+</body>
+</html>
