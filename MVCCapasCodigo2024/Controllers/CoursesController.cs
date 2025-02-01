@@ -39,9 +39,9 @@ namespace MVCCapasCodigo2024.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(CourseModel model)
         {
+        
             if (ModelState.IsValid)
             {
-
 
                 CourseService service = new CourseService();
                 //Modelo a Dominio
