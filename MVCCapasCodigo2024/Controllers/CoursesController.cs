@@ -35,13 +35,13 @@ namespace MVCCapasCodigo2024.Controllers
         }
 
 
-        public IActionResult GetAjax()
+        public IActionResult GetAjax(string filter)
         {
 
             CourseService service = new CourseService();
 
             //Listado de cursos de DOMAIN
-            var cursos = service.Get();
+            var cursos = service.GetFilter(filter);
            
             var model = cursos.Select(x => new CourseModel
             {

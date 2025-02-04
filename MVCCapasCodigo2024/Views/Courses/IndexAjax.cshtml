@@ -7,6 +7,7 @@
 <h2>Lista de Cursos</h2>
 
 <button id="listCoursesButton" class="btn btn-primary">Listar Cursos</button>
+<input type="text" id="txtFilter" />
 <button id="cleanCoursesButton" class="btn btn-primary">Limpiar Cursos</button>
 
 <table class="table">
@@ -36,9 +37,11 @@
 
         $('#listCoursesButton').click(function () {
 
+            var filter = $("#txtFilter").val();
+          
             $.ajax({
                 type: "GET",
-                url: "/Courses/GetAjax",
+                url: "/Courses/GetAjax?filter="+filter,
                 success: function (result) {
 
                     console.log(result);
