@@ -1,0 +1,68 @@
+﻿@{
+    ViewData["Title"] = "IndexAjax";
+}
+
+<h1>IndexAjax</h1>
+
+<h2>Lista de Cursos</h2>
+
+<button id="listCoursesButton" class="btn btn-primary">Listar Cursos</button>
+<button id="cleanCoursesButton" class="btn btn-primary">Limpiar Cursos</button>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>           
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Aquí se llenará la tabla con los estudiantes -->
+    </tbody>
+</table>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+
+        //Ctrl + K + D
+
+        $('#cleanCoursesButton').click(function () {
+
+            var tableBody = $('table tbody');
+            tableBody.empty(); // Vaciar la tabla
+        });
+
+        $('#listCoursesButton').click(function () {
+
+            $.ajax({
+                type: "GET",
+                url: "/Courses/GetAjax",
+                success: function (result) {
+
+                    console.log(result);
+
+                    var tableBody = $('table tbody');
+                     tableBody.empty(); // Vaciar la tabla
+
+                    result.forEach(function (course) {
+                        var newRow = `
+                                        <tr>
+                                                <td>${course.courseID}</td>
+                                                <td>${course.name}</td>                                               
+                                        </tr>`;
+                        tableBody.append(newRow);
+                    });
+
+
+                },
+                error: function () {
+                    alert('Hubo un error al listar los estudiantes.');
+                }
+            });
+
+        });
+
+    });
+</script>

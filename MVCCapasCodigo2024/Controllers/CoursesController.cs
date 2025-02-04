@@ -1,6 +1,7 @@
 ﻿using Domain;
 using Infraestructure;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using MVCCapasCodigo2024.Models;
 using Services;
 
@@ -26,6 +27,30 @@ namespace MVCCapasCodigo2024.Controllers
             }).ToList();
 
             return View(model);
+        }
+
+        public IActionResult IndexAjax()
+        {
+            return View();
+        }
+
+
+        public IActionResult GetAjax()
+        {
+
+            CourseService service = new CourseService();
+
+            //Listado de cursos de DOMAIN
+            var cursos = service.Get();
+           
+            var model = cursos.Select(x => new CourseModel
+            {
+                CourseID = x.CourseID,
+                Name = x.Name
+            }).ToList();
+
+
+            return Json(model);
         }
 
 
