@@ -22,7 +22,7 @@ namespace Services
         {
 
             using (var contex = new SchoolContext())
-            {
+            {            
                 contex.Schools.Add(school);
                 contex.SaveChanges();
             }

@@ -52,33 +52,7 @@ namespace MVCCapasCodigo2024.Controllers
 
             return View(model);
         }
-
-            //[HttpPost]
-            //[ValidateAntiForgeryToken]
-            //public IActionResult Create([Bind("Name")] CourseModel model)
-            //{
-            //    if (ModelState.IsValid)
-            //    {
-
-
-            //        CourseService service = new CourseService();
-            //        //Modelo a Dominio
-            //        //CourseModel = >Course
-
-
-            //        var dominio = new Course
-            //        {
-            //            Name = model.Name,
-            //            IsActive = true,
-            //            CreatedOn = DateTime.Now
-            //        };
-
-            //        service.Insert(dominio);
-
-            //        return RedirectToAction(nameof(Index));
-            //    }
-            //    return View(model);
-            //}
+          
 
         }
 }
